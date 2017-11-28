@@ -8,11 +8,10 @@ var config = {
   messagingSenderId: "601104183423"
 };
 firebase.initializeApp(config);
-const dbUser = firebase.database().ref().child('users');
-const dbVotos = firebase.database().ref().child('votos');
-const dbDenuncias = firebase.database().ref().child('denuncias');
-const dbCandidatos = firebase.database().ref().child('candidatos');
 
+//Constantes de Firebase
+const db = firebase.database();
+const auth = firebase.auth();
 
 // Inicio de Sesion
 $('#login').click(function(){
@@ -23,24 +22,24 @@ $('#login').click(function(){
 		login();
 	}	
 });
-
 // Funciones de Auth
 function login () {
 	var provedor =  new firebase.auth.GoogleAuthProvider();
-	firebase.auth().signInWithRedirect(provedor)
+	auth.signInWithRedirect(provedor)
 		.then(function(result){
 			var token = result.credential.accessToken;
 			var user = result.user;
-
+			//TODO: A que chequear al usuario y registrarlo y toda la paja
 		}).catch(function(error){
 		console.log(error);
 	});  
 }
 function logout () {
-	firabse.auth().signOut()
+	auth.signOut()
 		.then(function(){
 			// Beio
 		}).catch(function(error){
 			console.log(error);
 		});
 }
+
