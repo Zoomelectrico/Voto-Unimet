@@ -8,16 +8,20 @@ var config = {
   messagingSenderId: "601104183423"
 };
 firebase.initializeApp(config);
+const dbUser = firebase.database().ref().child('users');
+const dbVotos = firebase.database().ref().child('votos');
+const dbDenuncias = firebase.database().ref().child('denuncias');
+const dbCandidatos = firebase.database().ref().child('candidatos');
 
-// Inicio de Sesion;
+
+// Inicio de Sesion
 $('#login').click(function(){
 	var user = firebase.auth().currentUser;
 	if(user){
 		logout();
 	} else {
 		login();
-	}
-	
+	}	
 });
 
 // Funciones de Auth
@@ -27,6 +31,7 @@ function login () {
 		.then(function(result){
 			var token = result.credential.accessToken;
 			var user = result.user;
+
 		}).catch(function(error){
 		console.log(error);
 	});  
