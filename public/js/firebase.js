@@ -24,15 +24,18 @@ $('#login').click(function(){
 });
 // Funciones de Auth
 function login () {
-	var provedor =  new firebase.auth.GoogleAuthProvider();
-	auth.signInWithRedirect(provedor)
-		.then(function(result){
-			var token = result.credential.accessToken;
-			var user = result.user;
-			//TODO: A que chequear al usuario y registrarlo y toda la paja
-		}).catch(function(error){
+	console.log('flag 1');
+	firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider()).then(function(result){
+		var user = result.user;
+	}).catch(function(error){
+		console.log(error)
+	});
+	firebase.auth().getRedirectResult().then(function(result){
+		var user = result.user;
+		console.log(user);
+	}).catch(function(error){
 		console.log(error);
-	});  
+	});
 }
 function logout () {
 	auth.signOut()
