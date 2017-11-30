@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vota Unimet</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="style/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <nav class="grey darken-3">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo center">Voto Unimet</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+          <li><a href="votaciones.html">Votaciones</a></li>
+          <li><a href="resultados.html">Resultados</a></li>
+          <li><a href="denuncias.html">Denuncias</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="votaciones.html">Votaciones</a></li>
+          <li><a href="resultados.html">Resultados</a></li>
+          <li><a href="denuncias.html">Denuncias</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row card-panel">
+        <div class="col s12">
+          <form action="" class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="col m6 s12 input-field">
+                  <input placeholder="Pedro" id="nombre" type="text" class="validate">
+                  <label for="nombre">Nombre</label>
+                </div>
+                <div class="col m6 s12 input-field">
+                  <input placeholder="Perez" id="apellido" type="text" class="validate">
+                  <label for="apellido">Apellido</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col m6 s12 input-field">
+                  <input placeholder="Ing. Sistemas" id="carrera" type="text" class="validate">
+                  <label for="carrera">Carrera</label>
+                </div>
+                <div class="col m6 s12 input-field">
+                  <input id="email" type="email2" class="validate">
+                  <label for="email2">Email Alternativo</label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer grey darken-3">
+    <div class="footer-copyright">
+      <div class="container">
+        <h6 class="center white-text">© 2017 Voto Unimet by Quevedo & Rojas.</h6>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
