@@ -1,0 +1,28 @@
+[debug] [2017-11-30T13:56:26.959Z] ----------------------------------------------------------------------
+[debug] [2017-11-30T13:56:26.966Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jose Roberto Quevedo\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-11-30T13:56:26.967Z] CLI Version:   3.15.3
+[debug] [2017-11-30T13:56:26.967Z] Platform:      win32
+[debug] [2017-11-30T13:56:26.967Z] Node Version:  v8.4.0
+[debug] [2017-11-30T13:56:26.970Z] Time:          Thu Nov 30 2017 09:56:26 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-11-30T13:56:26.970Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-30T13:56:27.005Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-30T13:56:27.007Z] > authorizing via signed-in user
+[debug] [2017-11-30T13:56:27.014Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/votounimet  
+ Thu Nov 30 2017 09:56:27 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-11-30T13:56:28.294Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-30T13:56:28.296Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/votounimet/tokens  
+ Thu Nov 30 2017 09:56:28 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-11-30T13:56:29.141Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Jose Roberto Quevedo\Desktop\votoUnimet-NA'...
+[info] 
+[debug] [2017-11-30T13:56:29.146Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/votounimet  
+ Thu Nov 30 2017 09:56:29 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-11-30T13:56:30.021Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-30T13:56:30.022Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/601104183423/clients/_:getWebAppConfig  
+ Thu Nov 30 2017 09:56:30 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-11-30T13:56:30.972Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
