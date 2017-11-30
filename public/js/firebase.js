@@ -18,19 +18,12 @@ $('#login').click(function(){
 });
 // Funciones de Auth
 function login () {
-	var provedor =  new firebase.auth.GoogleAuthProvider();
-	firebase.auth().signInWithRedirect(provedor).then(function(result){
-			console.log('Flag 4');
-			var token = result.credential.accessToken;
-  			var user = firebase.auth().currentUser;
-  			if (typeof user === "undefined") {console.log('aqui')}
-  			db.ref('User/'+user.UID).set({
-  				UID: user.UID,
-  				nombre: user.displayName,
-  			});
-  		}).catch(function(error){
-		console.log(error);
-	});  
+	console.log('flag 1');
+	firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider()).then(function(result){
+		var user = result.user;
+	}).catch(function(error){
+		console.log(error)
+	});
 }
 function logout () {
 	firebase.auth().signOut().then(function(){
