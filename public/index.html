@@ -21,14 +21,26 @@
           <li><a href="resultados.html">Resultados</a></li>
           <li><a href="denuncias.html">Denuncias</a></li>
         </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a id="login">Login</a></li>
+          <li><a id="logout" class="hide">Logout</a></li>
+        </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="index.html">Home</a></li>
           <li><a href="votaciones.html">Votaciones</a></li>
           <li><a href="resultados.html">Resultados</a></li>
           <li><a href="denuncias.html">Denuncias</a></li>
+          <li><a id="login-m">Login</a></li>
+          <li class="hide"><a id="logout">Logout</a></li>
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div class="chip hide" id="chip-div">
+      <img src="" alt="Contact Person" id="img-user">
+      <p id="user-name"></p>
+    </div>
+    </div>
   </header>
   <main>
     <section id="banner-bienvenida" class="grey lighten-5">
@@ -44,43 +56,6 @@
               Voto Unimet es un sistema de Votación que realiza en tiempo en real todos los procesos que involucran un proceso electoral en la universidad. Puedes registrarte con tu correo universitario y formar parte de este proyecto tan genial.
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section id="form">
-      <div class="container">
-        <div class="row">
-          <h2 class="center">Registrate<hr class="naranja"> </h2>
-        </div>
-        <div class="row">
-          <div class="col m3"></div>
-          <form class="col m6 s12 card-panel">
-            <div class="row">
-              <div class="col m1"></div>
-              <div class="col m10">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 center">
-                    <a class="waves-effect waves-light btn grey darken-4" id="login" href="finish-login.html">Login</a>
-                    <a class="waves-effect waves-light btn grey-text text-darken-4 grey lighten-2" id="signup">Sign Up</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col m1"></div>
-            </div>
-          </form>
-          <div class="col m3"></div>
         </div>
       </div>
     </section>
@@ -126,7 +101,6 @@
         </div>
       </div>
     </section>
-    
   </main>
   <footer class="page-footer grey darken-3">
     <div class="footer-copyright">

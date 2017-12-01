@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav class="blue darken-1">
+    <nav class="grey darken-3">
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center">Voto Unimet</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -22,51 +22,65 @@
           <li><a href="denuncias.html">Denuncias</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#" id="login">Login</a></li>
+          <li><a id="login">Login</a></li>
+          <li><a id="logout" class="hide">Logout</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="index.html">Home</a></li>
           <li><a href="votaciones.html">Votaciones</a></li>
           <li><a href="resultados.html">Resultados</a></li>
           <li><a href="denuncias.html">Denuncias</a></li>
-          <li><a href="#" id="login">Login</a></li>
+          <li><a id="login-m">Login</a></li>
+          <li class="hide"><a id="logout">Logout</a></li>
         </ul>
       </div>
     </nav>
-  </header>
-  <main class="center">
-    <section id="banner-denuncias">
-      <div class="banner">
+    <div class="container">
+      <div class="chip hide" id="chip-div">
+        <img src="" alt="Contact Person" id="img-user">
+        <p id="user-name"></p>
       </div>
-    </section>
-    <div class="container card-panel">
+    </div>
+  </header>
+  <main>
+    <div class="container">
       <div class="row">
         <div class="col s12">
+          <div class="row">
+            <div class="col m2"></div>
+            <div class="col m10 s12 card-panel">
+              <div class="row">
+                <div class="col s1"></div>
+                <div class="col s10">
+                  <div class="row">
+                    <div class="col m6 s12 input-field">
+                      <input placeholder="Pedro Perez" id="nombre" type="text" class="validate">
+                      <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="col m6 s12 input-field">
+                      <input placeholder="Correo" id="email" type="text" class="validate">
+                      <label for="email">E-Mail</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 input-field">
+                      <textarea id="denuncia" class="materialize-textarea"></textarea>
+                      <label for="denuncia">Denuncia: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 center">
+                      <a class="waves-effect waves-light btn">button</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s1"></div>
+              </div>
+            </div>
+            <div class="col m2"></div>
+          </div>
         </div>
       </div>
-      <form action="" class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class="input-field col m6 s12">
-              <input type="text" name="nombre" placeholder="Nombre">
-              <label for="nombre">Nombre</label>
-            </div>
-            <div class="input-field col m6 s12">
-              <input type="email" name="email" placeholder="E-Mail">
-              <label for="email">Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col m6 s12">
-              <textarea name="denuncia" class="materialize-textarea"></textarea>
-              <label for="denuncia">Denuncia</label>
-            </div>
-          </div>
-          <div class="row">
-            <button type="">Enviar</button>
-          </div>
-        </div>
-      </form>
     </div>
   </main>
   <footer class="page-footer blue darken-1">

@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav class="blue darken-1">
+    <nav class="grey darken-3">
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center">Voto Unimet</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -22,17 +22,25 @@
           <li><a href="denuncias.html">Denuncias</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#" id="login">Login</a></li>
+          <li><a id="login">Login</a></li>
+          <li><a id="logout" class="hide">Logout</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="index.html">Home</a></li>
           <li><a href="votaciones.html">Votaciones</a></li>
           <li><a href="resultados.html">Resultados</a></li>
           <li><a href="denuncias.html">Denuncias</a></li>
-          <li><a href="#" id="login">Login</a></li>
+          <li><a id="login-m">Login</a></li>
+          <li class="hide"><a id="logout">Logout</a></li>
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div class="chip hide" id="chip-div">
+      <img src="" alt="Contact Person" id="img-user">
+      <p id="user-name"></p>
+    </div>
+    </div>
   </header>
   <main>
     <div class="container">
