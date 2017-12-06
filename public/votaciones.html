@@ -6,7 +6,7 @@
   <title>Vota Unimet</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="assets/style/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -60,7 +60,7 @@
               <li>
                 <div class="collapsible-header"><i class="material-icons">people</i>Candidatos</div>
                 <div class="collapsible-body"><span>
-                      <table>
+                      <table id="table" class="centered responsive-table">
                         <thead>
                           <tr>
                               <th>Plancha</th>
@@ -70,29 +70,8 @@
                               <th>Cargo4</th>
                           </tr>
                         </thead>
-
-                        <tbody>
-                          <tr>
-                            <td>Alvin</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                          </tr>
-                          <tr>
-                            <td>Alvin</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                          </tr>
-                          <tr>
-                            <td>Alvin</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                          </tr>
+                        <tbody id="candidatos-table">
+                          
                         </tbody>
                       </table>
                     </span></div>
@@ -173,7 +152,6 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/Chart.bundle.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
