@@ -1,7 +1,19 @@
 $(document).ready(function() {
+  function saveData(denuncia, uid, url) {
+    let myRef = firebase.database().ref('Denuncias/' + uid).push();
+    let newData = {
+      ID: uid,
+      Denuncia: denuncia,
+      URLArchivo: url
+    }
+    myRef.push(newData);
+    window.location = 'index.html';
+  }
+
   firebase.auth().onAuthStateChanged(function(user) {
     let nombre = document.getElementById('nombre');
-    let email = document.getElementById('email');
+    let email = document.getElementById('email'); 
+    var url;
     console.log(nombre);
     if (user) {
       nombre.value = user.displayName;
@@ -24,11 +36,9 @@ $(document).ready(function() {
         }, function(error) {
           console.log(error)
         }, function() {
-          let denuncia = document.getElementById('denuncia').value;
-          guardarDenuncia(denuncia, user.uid,uploadTask.snapshot.downloadURL);
-          window.location = 'index.html';  
+          url = uploadTask.snapshot.downloadURL;
         });
-        
+      saveData(document.getElementById('denuncia').value, user.uid, url)
       });
     } else {
       document.getElementById('enviarDenuncia').addEventListener('click', function() {
@@ -36,15 +46,4 @@ $(document).ready(function() {
       });
     }
   });
-
-  function guardarDenuncia(denuncia, UID, url) {
-    let myRef = firebase.database().ref('Denuncias/' + UID + '/').push();
-    let key = myRef.key;
-    let newData = {
-      ID: UID,
-      Denuncia: denuncia,
-      URLArchivo: url
-    }
-    myRef.push(newData);
-  }
 });

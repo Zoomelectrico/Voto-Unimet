@@ -17,7 +17,7 @@ $(document).ready(function() {
     }, function(error) {
       console.log(error)
     }, function() {
-      firebase.database().ref('Candidatos/'+document.getElementById('nombre').value+'/').set({
+      firebase.database().ref('Candidatos/'+document.getElementById('nombre').value).set({
         nombre: document.getElementById('nombre').value,
         email: document.getElementById('email').value,
         cargo: document.getElementById('cargo').value,
