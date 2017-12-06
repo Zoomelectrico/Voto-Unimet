@@ -1,0 +1,36 @@
+[debug] [2017-12-06T13:49:04.603Z] ----------------------------------------------------------------------
+[debug] [2017-12-06T13:49:04.634Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\germa\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-06T13:49:04.634Z] CLI Version:   3.15.3
+[debug] [2017-12-06T13:49:04.634Z] Platform:      win32
+[debug] [2017-12-06T13:49:04.634Z] Node Version:  v8.9.1
+[debug] [2017-12-06T13:49:04.638Z] Time:          Wed Dec 06 2017 09:49:04 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-06T13:49:04.638Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-06T13:49:05.512Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-06T13:49:05.513Z] > authorizing via signed-in user
+[debug] [2017-12-06T13:49:05.520Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-06T13:49:05.520Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/o6vVYCWgos5JQ__mJoYGBLzkxzPQhaRuO4-SfEIFv5sFl-kcr5G3BiBf-HWDwDtY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Dec 06 2017 09:49:05 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-06T13:49:07.543Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T13:49:07.792Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/votounimet  
+ Wed Dec 06 2017 09:49:07 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-06T13:49:09.337Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T13:49:09.338Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/votounimet/tokens  
+ Wed Dec 06 2017 09:49:09 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-06T13:49:10.038Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\germa\Desktop\UNIMET\7 trimestre\Base de Datos\Voto-Unimet'...
+[info] 
+[debug] [2017-12-06T13:49:10.071Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/votounimet  
+ Wed Dec 06 2017 09:49:10 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-06T13:49:12.337Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-06T13:49:12.338Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/601104183423/clients/_:getWebAppConfig  
+ Wed Dec 06 2017 09:49:12 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-06T13:49:14.341Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
