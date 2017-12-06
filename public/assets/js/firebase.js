@@ -31,21 +31,22 @@ document.querySelector("#login").addEventListener('click', signIn);
 document.querySelector("#login-m").addEventListener('click', signInMobile);
 
 function signIn () {
-    var provider = new firebase.auth.GoogleAuthProvider();
+    let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
-	    var user = result.user;
+	    let user = result.user;
 	    firebase.database().ref('User/' + user.uid).set({
-			UID: user.uid,
-			nombre: user.displayName,
-			email: user.email
-		});
+  			UID: user.uid,
+  			nombre: user.displayName,
+  			email: user.email
+		  });
+      window.location = 'panel.html';
     }).catch(function(error) {});
 }
 
 function signInMobile () {
-    var provider = new firebase.auth.GoogleAuthProvider();
+    let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider).then(function(result) {
-	    var user = result.user;
+	    let user = result.user;
 	    firebase.database().ref('User/' + user.uid).set({
 			UID: user.uid,
 			nombre: user.displayName,

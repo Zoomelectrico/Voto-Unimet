@@ -1,6 +1,20 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    "Candidatos":{
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "Denuncias": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "User": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "Votos" : {
+      ".read": true,
+      ".write": "auth != null"
+    }
   }
 }
