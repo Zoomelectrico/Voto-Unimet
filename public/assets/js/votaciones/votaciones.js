@@ -30,12 +30,12 @@ $(document).ready(function() {
     var gsReference = storage.refFromURL(data.urlFoto);
     if (typeof data.urlFoto === 'undefined') {
       cell5.innerHTML = 'Hola';
-    }
-    gsReference.getDownloadURL().then(function(url) {
+    } else {
+      gsReference.getDownloadURL().then(function(url) { 
       cell5.innerHTML = '<img src= ' + '\'' + url + '\'' + ' class= ' + '\' ' + 'responsive-img circle' + '\'' + '>';
-    }).catch(function(error) {});
-
-    console.log('listopoooo')
+      }).catch(function(error) {});
+    }
+    
   }
 
   ref.orderByChild("Cargo").equalTo("Consejero Estudiantil").on("child_added", function(snapshot) {
@@ -56,7 +56,7 @@ $(document).ready(function() {
   ref.orderByChild("Cargo").equalTo("Presidente Estudiantil").on("child_added", function(snapshot) {
 
     var data = snapshot.val();
-    console.log(data.Nombre);
+    console.log("nombre: " + data.Nombre);
 
     armarTabla(data);
 
