@@ -1,12 +1,14 @@
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    if (user.voto === false || typeof user.voto === 'undefined') {
-      $('#votacion').removeClass('hide');
+$(document).ready(function() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      if (user.voto === false || typeof user.voto === 'undefined') {
+        $('#votar').removeClass('hide');
+        document.getElementById('votoMensaje').innerHTML = 'No has votado';
+      } else {
+        $('#votar').addClass('hide');
+      }
     } else {
-       alert('Ya vostate loco');
-       $('#votacion').addClass('hide');
+      window.location = 'index.html';
     }
-  } else {
-    $('#votacion').addClass('hide');
-  }
+  });
 });
