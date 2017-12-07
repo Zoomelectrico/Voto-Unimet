@@ -152,3 +152,31 @@
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 
+[debug] [2017-12-07T12:16:16.339Z] ----------------------------------------------------------------------
+[debug] [2017-12-07T12:16:16.354Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\germa\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-07T12:16:16.354Z] CLI Version:   3.15.3
+[debug] [2017-12-07T12:16:16.354Z] Platform:      win32
+[debug] [2017-12-07T12:16:16.354Z] Node Version:  v8.9.1
+[debug] [2017-12-07T12:16:16.354Z] Time:          Thu Dec 07 2017 08:16:16 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-07T12:16:16.354Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-07T12:16:16.386Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-07T12:16:16.386Z] > authorizing via signed-in user
+[debug] [2017-12-07T12:16:16.386Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/votounimet  
+ Thu Dec 07 2017 08:16:16 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-07T12:16:17.989Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-07T12:16:17.989Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/votounimet/tokens  
+ Thu Dec 07 2017 08:16:17 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-07T12:16:18.643Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\germa\Desktop\UNIMET\7 trimestre\Base de Datos\Voto-Unimet'...
+[info] 
+[debug] [2017-12-07T12:16:18.658Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/votounimet  
+ Thu Dec 07 2017 08:16:18 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-07T12:16:20.703Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-07T12:16:20.703Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/601104183423/clients/_:getWebAppConfig  
+ Thu Dec 07 2017 08:16:20 GMT-0400 (Venezuela Standard Time)
+[debug] [2017-12-07T12:16:23.098Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

@@ -32,14 +32,17 @@ document.querySelector("#login-m").addEventListener('click', signInMobile);
 
 function signIn() {
   let provider = new firebase.auth.GoogleAuthProvider();
+  console.log("a ver");
   firebase.auth().signInWithPopup(provider).then(function(result) {
+    console.log("esta entrando");
     let user = result.user;
+    console.log("Entra bien");
     firebase.database().ref('User/' + user.uid).set({
       UID: user.uid,
       nombre: user.displayName,
       email: user.email
     });
-    window.location = 'panel.html';
+    //window.location = 'panel.html';
   }).catch(function(error) {});
 }
 
