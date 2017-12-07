@@ -48,19 +48,30 @@ ref.once('value', function(snapshot) {
 	  var cell1 = row.insertCell(0);
 	  var cell2 = row.insertCell(1);
 	  var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
 	  
 	  // asigna a las celdas el valir del Child especificado
 	  cell1.innerHTML = d.Nombre;
-	  cell2.innerHTML = d.Candidato;
-	  cell3.innerHTML = d.Nombre;
+	  cell2.innerHTML = d.Cargo;
+	  cell3.innerHTML = d.Plancha;
+    cell4.innerHTML = d.cantVotos;
+
 
 	  }
 	 
 	        
 	});
 	 
+/*
+function contarVotos(candidato){
+  firebase.database().ref('Votos').on("child_added", function(snapshot){
+    var v = snapshot.val();
 
+    if(v.idUser == candidato.Nombre){
 
+    }
+  });
+}*/
 
 
 
