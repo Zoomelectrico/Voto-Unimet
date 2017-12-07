@@ -27,38 +27,30 @@ ref.once('value', function(snapshot) {
    
 
 
-	var db = firebase.database();
-	var ref = db.ref("Candidatos");
+	
+	var ref = firebase.database().ref("Candidatos");
 	     
-	var table = document.getElementById("tabla");
+	var tabla = document.getElementById("tabla");
+
+	tabla.innerHTML = "";
 	    
-	//limpia la tabla
-	table.innerHTML = "";
-	 
-	 //con esta función recorre todos los datos almacenados en FB ordenados por mi child(tipo)
-	    
-	ref/*.orderByChild("tipo")*/.on("child_added", function(snapshot){
-	//repite el proceso como cuantas referencias encuentre y los asigna a la lista "d"
+	ref.orderByValue().limitToLast(4).on("child_added", function(snapshot){
 	     
-	  var d = snapshot.val(); 
-	  console.log(d.Nombre);       
-	        
-	  {
-	  var row = table.insertRow(0);
-	  var cell1 = row.insertCell(0);
-	  var cell2 = row.insertCell(1);
-	  var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-	  
-	  // asigna a las celdas el valir del Child especificado
-	  cell1.innerHTML = d.Nombre;
-	  cell2.innerHTML = d.Cargo;
-	  cell3.innerHTML = d.Plancha;
-    cell4.innerHTML = d.cantVotos;
+	  var data = snapshot.val(); 
+	  console.log(data.Nombre); 
 
+	  var row = tabla.insertRow(0);
+	  var nombre = row.insertCell(0);
+	  var cargo = row.insertCell(1);
+	  var plancha = row.insertCell(2);
+    var cantVotos = row.insertCell(3);
 
-	  }
+	  nombre.innerHTML = data.Nombre;
+	  cargo.innerHTML = data.Cargo;
+	  plancha.innerHTML = data.Plancha;
+    cantVotos.innerHTML = data.cantVotos;
 	 
+    
 	        
 	});
 	 
@@ -73,37 +65,31 @@ function contarVotos(candidato){
   });
 }*/
 
+ref.on("child_added", function(snapshot){
+  var data = snapshot.val(); 
+  addData(myChart, data.Nombre, data.cantVotos);
+})
 
-
+function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
 
 
 
 //Gráfica
 var ctx = document.getElementById("myChart");
+var tble = document.getElementById('tabla');
 
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: [],
     datasets: [{
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
       borderWidth: 1
     }]
   },

@@ -38,36 +38,37 @@
     <div class="container">
       <div class="hide center" id="chip-div">
         <img src="" alt="Contact Person" id="img-user" class="circle responsive-img">
-        <p id="user-name"></p>
+        <p><h3 id="user-name"></h3></p>
       </div>
     </div>
   </header>
   <main class="hide" id="votacion">
     <div class="container">
       <div class="row">
-        <div class="card blue-grey darken-1">
+        <div class="card grey darken-3">
           <div class="card-content white-text">
             <span class="card-title">Plataforma Electoral</span>
             <p>Utiliza nuestra plataforma para votar por las personas de tu preferencia!</p>
           </div>
           <div class="card-action">
             <a href="#"></a>
-            <ul class="collapsible" data-collapsible="accordion">
+            <ul class="collapsible" data-collapsible="accordion" >
               <li>
                 <div class="collapsible-header"><i class="material-icons">info</i>¿Cómo votar?</div>
-                <div class="collapsible-body"><span>Debes ir a la siguiente sección de este desplegable, ahí encontrará los candidatos por lo que puede votar.
+                <div class="collapsible-body white-text"><span>Debes ir a la siguiente sección de este desplegable, ahí encontrará los candidatos por lo que puede votar.
                 <p>Luego de escoger el candidato de preferencia, proceda a seleccionarlos en la tercera sección de esta página, donde observará por cargo las postulaciones de cada candidato, seleccione el cicurlo que corresponda al candidato de su preferencia.</p>
                 <p> Por último, de clic en el botón "votar".</p></span></div>
               </li>
               <li>
                 <div class="collapsible-header"><i class="material-icons">people</i>Candidatos</div>
-                <div class="collapsible-body"><span>
+                <div class="collapsible-body white-text"><span>
                       <table id="table" class="centered responsive-table">
                         <thead>
                           <tr>
                               <th>Cargo</th>
                               <th>Plancha</th>
                               <th>Candidato</th>
+                              <th>Carrera</th>
                           </tr>
                         </thead>
                         <tbody id="candidatos-table">
@@ -78,32 +79,21 @@
               </li>
               <li>
                 <div class="collapsible-header"><i class="material-icons">games</i>Votar</div>
-                <div class="collapsible-body"><span>
+                <div class="collapsible-body white-text"><span>
                       <div class="row">
                       <form class="col s12" name = "formVotar">
                         <div class="row">
-                          <div class="col s4">
+                          <div class="col s6">
                             Consejero Estudiantil
                             <div id="cont1"></div>
+                            <p><input name="groupCons" type="radio" id="nuloCons" value="CID0"/>
+                              <label for="nuloCons">NULO</label></p>
                           </div>
-                          <div class="col s4">
+                          <div class="col s6">
                               Presidencia Estudiantil
                               <div id="cont2"></div>
-                          </div>
-                          <div class="col s4">
-                            Cargo3
-                            <p>
-                              <input name="group3" type="radio" id="test7" />
-                              <label for="test7">Red</label>
-                            </p>
-                            <p>
-                              <input name="group3" type="radio" id="test8" />
-                              <label for="test8">Yellow</label>
-                            </p>
-                            <p>
-                              <input class="with-gap" name="group3" type="radio" id="test9"  />
-                              <label for="test9">Green</label>
-                            </p>
+                              <p><input name="groupPres1" type="radio" id="nuloPres" value="CID0"/>
+                              <label for="nuloPres">NULO</label></p>                              
                           </div>    
                         </div>
                         <div class="row">
