@@ -12,6 +12,7 @@ main {
 }
 section#banner-bienvenida{
 	padding: 25px 0px;
+	background-image: url('http://www.unimet.edu.ve/unimetsite/wp-content/uploads/2014/11/bandera-unimet.jpg');
 }
 .naranja{
 	border-color: #f4511e;
@@ -24,3 +25,15 @@ section#form{
 	padding: 1.2rem !important;
 }
 .material-icons.md-grey { color: #424242; }
+
+.user-view {
+	max-height: 60px;
+	padding: 10px;
+	width: 100%;
+}
+img#user-photo {
+	max-height: 50px;
+}
+#user-name {
+	font-size: 1.5rem;
+}

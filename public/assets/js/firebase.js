@@ -11,17 +11,14 @@ firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    console.log('1');
-    console.log(user);
-    $('#chip-div').removeClass('hide');
+    $('.user-view').removeClass('hide');
     $('#user-name').append(user.displayName);
-    $('#img-user').attr("src", user.photoURL);
+    $('#user-photo').attr("src", user.photoURL);
     $('#logout').removeClass('hide');
     $('#login').addClass('hide');
-    document.getElementById('user-name').innerHTML = user.displayName;
   } else {
     console.log('2');
-    $('#chip-div').addClass('hide');
+    $('.user-view').addClass('hide');
     $('#logout').addClass('hide');
     $('#login').removeClass('hide');
   }

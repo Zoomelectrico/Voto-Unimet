@@ -19,7 +19,7 @@ $(document).ready(function() {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
-    
+
     cell1.innerHTML = data.Cargo;
     cell2.innerHTML = data.Plancha;
     cell3.innerHTML = data.Nombre;
@@ -31,10 +31,10 @@ $(document).ready(function() {
     if (typeof data.urlFoto === 'undefined') {
       cell5.innerHTML = 'Hola';
     }
-    gsReference.getDownloadURL().then(function(url) { 
+    gsReference.getDownloadURL().then(function(url) {
       cell5.innerHTML = '<img src= ' + '\'' + url + '\'' + ' class= ' + '\' ' + 'responsive-img circle' + '\'' + '>';
     }).catch(function(error) {});
-    
+
     console.log('listopoooo')
   }
 
@@ -77,7 +77,6 @@ $(document).ready(function() {
         alert('Ya vostate');
         $('#votacion').addClass('hide');
         window.location = 'index.html'
-
       }
     } else {
       alert('No puedes votar si no estas registrado')
@@ -88,51 +87,76 @@ $(document).ready(function() {
 
 
 $('#votarBtn').click(function() { //pasar el user para comprobar que no puede votar dos veces, poner la condicion de que si voto a true
-  var i
-  var votosRef = firebase.database().ref("Votos");
+  firebase.auth().onAuthStateChanged(function(userG) {
+    if (userG) {
+      var userRef = firebase.database().ref('User/' + userG.uid);
+      userRef.on('value', function(snapshotUser) {
+        var user = snapshotUser.val();
+        if (user.voto === false || typeof user.voto === 'undefined') {
+          var i;
+          var votosRef = firebase.database().ref("Votos");
 
-  //Para los consejeros de escuela
-  for (i = 0; i < document.formVotar.groupCons.length; i++) {
-    if (document.formVotar.groupCons[i].checked)
-      break;
-  }
-
-
-  var numVotosRef = firebase.database().ref().child('/Candidatos/' + document.formVotar.groupCons[i].value);
-  numVotosRef.once("value", function(snapshot) {
-    var cantVotosActual = snapshot.val().cantVotos + 1;
-    console.log("Cantidad de votos: " + snapshot.val().Nombre);
-    numVotosRef.update({
-      cantVotos: cantVotosActual
-    });
-    window.location = 'panel.html';
-  })
-
-  let newData = {
-    idUser: document.formVotar.groupCons[i].value
-  }
-  votosRef.push(newData);
+          //Para los consejeros de escuela
+          for (i = 0; i < document.formVotar.groupCons.length; i++) {
+            if (document.formVotar.groupCons[i].checked)
+              break;
+          }
 
 
-  //Para los presidentes
-  for (i = 0; i < document.formVotar.groupPres1.length; i++) {
-    console.log("entro en un ciclo");
-    if (document.formVotar.groupPres1[i].checked)
-      break;
-  }
+          var numVotosRef = firebase.database().ref().child('/Candidatos/' + document.formVotar.groupCons[i].value);
+          numVotosRef.once("value", function(snapshot) {
+            var cantVotosActual = snapshot.val().cantVotos + 1;
+            console.log("Cantidad de votos: " + snapshot.val().Nombre);
+            numVotosRef.update({
+              cantVotos: cantVotosActual
+            });
+            window.location = 'panel.html';
+          })
 
-  numVotosRef = firebase.database().ref().child('/Candidatos/' + document.formVotar.groupPres1[i].value);
-  numVotosRef.once("value", function(snapshot) {
-    var cantVotosActual = snapshot.val().cantVotos + 1;
-    console.log("Cantidad de votos: " + snapshot.val().Nombre);
-    numVotosRef.update({
-      cantVotos: cantVotosActual
-    });
-  })
+          let newData = {
+            idUser: document.formVotar.groupCons[i].value
+          }
+          votosRef.push(newData);
 
-  newData = {
-    idUser: document.formVotar.groupPres1[i].value
-  }
-  votosRef.push(newData);
+
+          //Para los presidentes
+          for (i = 0; i < document.formVotar.groupPres1.length; i++) {
+            console.log("entro en un ciclo");
+            if (document.formVotar.groupPres1[i].checked)
+              break;
+          }
+
+          numVotosRef = firebase.database().ref().child('/Candidatos/' + document.formVotar.groupPres1[i].value);
+          numVotosRef.once("value", function(snapshot) {
+            var cantVotosActual = snapshot.val().cantVotos + 1;
+            console.log("Cantidad de votos: " + snapshot.val().Nombre);
+            numVotosRef.update({
+              cantVotos: cantVotosActual
+            });
+          })
+          newData = {
+            idUser: document.formVotar.groupPres1[i].value
+          }
+          votosRef.push(newData);
+          firebase.database().ref('User/' + user.uid).update({
+            voto: true
+          });
+          window.location = 'index.html';
+        } else {
+          alert('Ya vostate');
+          $('#votacion').addClass('hide');
+          window.location = 'index.html'
+        }
+      });
+
+    } else {
+      alert('No puedes votar si no estas registrado')
+      window.location = 'index.html'
+    }
+  });
+
+
+
+
 
 });
